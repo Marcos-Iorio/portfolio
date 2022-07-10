@@ -41,6 +41,7 @@ import Model from './Model'
 
    return (
          <Canvas
+            frameloop="demand"
             camera={{ position: [0, 0, 10], fov: 3, near: 0.2 }}
             style={{
                backgroundColor: `${color}`,
