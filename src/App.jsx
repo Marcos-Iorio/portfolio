@@ -1,10 +1,10 @@
-import React, {useRef, useEffect}  from 'react'
+import React, {useRef}  from 'react'
 
 import './App.css'
 
 import About from './components/about/About'
 import Contact from './components/Contact/Contact'
-import Heading from './components/heading/heading'
+import Heading from './components/heading/Heading'
 import Menu from './components/menu/Menu'
 import Projects from './components/projects/Projects'
 import Stack from './components/Stack/Stack'
