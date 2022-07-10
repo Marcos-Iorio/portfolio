@@ -1,5 +1,6 @@
 import React, {Children, useState, useEffect} from 'react'
 import { useMediaQuery } from 'react-responsive'
+import {useSwipeable} from 'react-swipeable';
 
 import styles from './Slider.module.scss'
 
@@ -27,6 +28,11 @@ const Slider = ({children}) => {
         setActiveIndex(newIndex)
     }
 
+    const handlers = useSwipeable({
+        onSwipedLeft: () => updateIndex(activeIndex + 1),
+        onSwipedRight: () => updateIndex(activeIndex - 1)
+    });
+
     useEffect(() => {
         const interval = setInterval(() => {
             updateIndex(activeIndex + 1)
@@ -39,7 +45,7 @@ const Slider = ({children}) => {
 
     if(isMobile){
         return(
-            <div className={styles.carousel}>
+            <div {...handlers} className={styles.carousel}>
             <div className={styles.inner} style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
                 {Children.map(children, (child, index) => {
                     return React.cloneElement(child, {width: "100%"});
