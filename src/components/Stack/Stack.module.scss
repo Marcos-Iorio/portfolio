@@ -46,7 +46,7 @@ background: linear-gradient(180deg, rgba(226,228,233,1) 0%, #c6e3f7 33%);
     }
 }
 
-@media(min-width: 1366px){
+@media(max-width: 1366px){
     .stack__wrapper{
         padding-top: 4em;
 
