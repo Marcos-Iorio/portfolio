@@ -58,8 +58,8 @@ const projects = [
 	{
 		name: 'This.Portfolio',
 		description:  "A portfolio designed and coded by... ME.",
-		github: null,
-		livePage: null,
+		github: 'https://github.com/Marcos-Iorio/portfolio',
+		livePage: 'https://portfolio-marcos-iorio.vercel.app/',
 	},
 	{
 		name: 'SDG Site.',
