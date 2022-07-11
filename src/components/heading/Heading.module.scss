@@ -94,13 +94,12 @@
     }
 }
 
-@media(max-width: 1366px){
-    .hover__detail{
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px){
+     .hover__detail{
         top: 30% !important;
     }
-}
-
-@media(max-width: 1366px){
     .title__wrapper{
         display: flex !important;
         flex-direction: column !important;
