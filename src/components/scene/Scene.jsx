@@ -1,5 +1,5 @@
 import React, { Suspense, useRef, useEffect, useState } from 'react';
-import { Canvas, useThree } from '@react-three/fiber';
+import { Canvas} from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { Html, useProgress } from '@react-three/drei'
 import randomColors from 'randomcolor'
@@ -16,6 +16,8 @@ import Model from './Model'
       const [coordX, setCoordX] = useState(0);
       const [coordY, setCoordY] = useState(0); 
       const [color, setColor] = useState();
+
+      const canvasRef = useRef();
 
       const onPointerMove = (e) => {
          const x = (e.clientX / window.innerWidth) * 2 - 1;
@@ -51,6 +53,7 @@ import Model from './Model'
                padding: '0',
                boxShadow: '0px 10px 15px -3px rgba(0,0,0,0.1)',
             }}
+            ref={canvasRef}
          >
             
             <ambientLight intensity={1.25} />

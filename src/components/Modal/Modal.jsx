@@ -1,7 +1,10 @@
 import React from 'react'
 
 import styles from './Modal.module.scss';
-import Button from '../Button/Button';
+
+import cvES from './CV-Marcos Iorio.pdf'
+import cvEN from './CV_Marcos-Iorio-en.pdf'
+
 
 const Backdrop = (props) => {
     return <div className={styles.backdrop} onClick={props.onConfirm}/>
@@ -17,8 +20,8 @@ const Backdrop = (props) => {
                 <h2>Select the CV language:</h2>
             </header>
             <div className={styles.content}>
-                <a href="" download={true} onClick={props.onConfirm}>English</a>
-                <a href="" download={true} onClick={props.onConfirm}>Spanish</a>
+                <a href={cvEN} target="_blank" onClick={props.onConfirm}>English</a>
+                <a href={cvES} target="_blank" onClick={props.onConfirm}>Spanish</a>
             </div>
         </div>
         </>

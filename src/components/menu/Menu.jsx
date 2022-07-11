@@ -45,10 +45,10 @@ const Menu = () => {
                 <VscChromeClose style={{color: menuColor.color}}/>
                 </button>
                 <ul className={styles.menu} style={{color: menuColor.color}}>
-                    <a href="#about"><li>ABOUT</li></a>
-                    <a href="#stack"><li>STACK</li></a>
-                    <a href="#projects"><li>PROJECTS</li></a>
-                    <a href="#contact-me"><li>CONTACT</li></a>
+                    <a href="#about" onClick={() => setIsOpen(false)}><li>ABOUT</li></a>
+                    <a href="#stack" onClick={() => setIsOpen(false)}><li>STACK</li></a>
+                    <a href="#projects" onClick={() => setIsOpen(false)}><li>PROJECTS</li></a>
+                    <a href="#contact-me" onClick={() => setIsOpen(false)}><li>CONTACT</li></a>
                 </ul>
         </header>
             </>
