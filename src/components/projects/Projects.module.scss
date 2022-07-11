@@ -130,7 +130,7 @@
   and (max-device-width: 1600px){
     .project__wrapper{
         padding: 15em 6em 0 6em;
-        height: 100vh;
+        height: fit-content;
     }
 
     .projects{
