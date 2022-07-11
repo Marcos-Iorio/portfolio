@@ -20,8 +20,14 @@ import Model from './Model'
       const canvasRef = useRef();
 
       const onPointerMove = (e) => {
-         const x = (e.clientX / window.innerWidth) * 2 - 1;
-         const y = (e.clientY / window.innerHeight) * 1 - 0.5;
+         const canvas = canvasRef.current;
+         let rect = canvas.getBoundingClientRect();
+
+         let x = (e.clientX / window.innerWidth) * 2 - 1;
+         let y = (e.clientY / window.innerHeight) * 1 - 0.5;
+
+         x -= ((rect.right - canvas.width / 2) / window.innerWidth) * 2 - 1;
+         y -= ((rect.top + canvas.height / 2) / window.innerHeight) - 0.5;
 
          setCoordX(x);
          setCoordY(y);
