@@ -125,9 +125,11 @@
 }
 
 
-@media (max-width: 1366px){
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px){
     .project__wrapper{
-        padding: 4em 6em 0 6em;
+        padding: 15em 6em 0 6em;
         height: 100vh;
     }
 
@@ -155,7 +157,9 @@
     }
 }
 
-@media (max-width: 768px){
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 640px){
     .project__title{
         padding-left: 0 !important;
     }
