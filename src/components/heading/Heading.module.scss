@@ -94,9 +94,9 @@
     }
 }
 
-@media screen 
-  and (min-device-width: 1200px) 
-  and (max-device-width: 1600px){
+@media only screen 
+  and (min-width: 320px) 
+  and (max-width: 640px){
      .hover__detail{
         left: 47%!important;
         width: 12em!important;
@@ -154,3 +154,12 @@
     }
     
 }
+
+@media screen 
+  and (min-width: 1200px) 
+  and (max-width: 1600px){
+    .hover__detail{
+        top: 30% !important;
+        left: 57% !important;
+    }
+  }

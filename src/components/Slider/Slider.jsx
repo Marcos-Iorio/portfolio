@@ -17,6 +17,7 @@ export const SliderItem = ({children, width}) => {
 const Slider = ({children}) => {
     const [activeIndex, setActiveIndex] = useState(0)
     const isMobile = useMediaQuery({ maxWidth: 768 })
+    const [paused, setIsPaused] = useState(false);
 
     const updateIndex = (newIndex) => {
         if(newIndex < 0){
@@ -35,7 +36,9 @@ const Slider = ({children}) => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            updateIndex(activeIndex + 1)
+            if(!paused){
+                updateIndex(activeIndex + 1)
+            }
         }, 2500)
 
         return () => {
@@ -45,7 +48,7 @@ const Slider = ({children}) => {
 
     if(isMobile){
         return(
-            <div {...handlers} className={styles.carousel}>
+            <div {...handlers} className={styles.carousel} onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
             <div className={styles.inner} style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
                 {Children.map(children, (child, index) => {
                     return React.cloneElement(child, {width: "100%"});
