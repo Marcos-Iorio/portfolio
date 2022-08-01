@@ -8,21 +8,23 @@ import Heading from './components/heading/Heading'
 import Menu from './components/menu/Menu'
 import Projects from './components/projects/Projects'
 import Stack from './components/Stack/Stack'
+import ThemeColorProvider from './context/ThemeColorContext'
 
 function App() {
   const containerRef = useRef(null);
 
+
   return (
-    <>
+    <ThemeColorProvider>
       <Menu/>
-      <div ref={containerRef} className='content_wrapper'>
+      <div ref={containerRef}>
         <Heading/>
         <About/>
         <Stack/>
         <Projects/>
         <Contact/>
       </div>
-    </>
+    </ThemeColorProvider>
     
   )
 }

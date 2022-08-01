@@ -1,10 +1,11 @@
+@import '../../vars.scss';
+
 .carousel{
     overflow-x: hidden;
     position: relative;
-    background-color: #e2e4e9;
     border-radius:  20px;
     margin-top: 5em;
-    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
 
 .inner{
@@ -66,19 +67,50 @@
     display: flex;
     flex-direction: row;
     gap: 10px;
+    border: 1px black;
 
     .dot{
         border-radius: 100%;
         width: 3px;
         height: 13px;
-        border: 1px solid #333;
-        background-color: transparent;
         cursor: pointer;
     }
+}
 
-    .active{
-        background-color: #333; 
-    }
+.dark-text{
+    color: $dark-color;
+}
+
+.light-text{
+    color: $light-color;
+}
+
+.dark-theme{
+    background: #333;
+    box-shadow: 0px 10px 15px -3px rgba(255,255,255,0.1);
+}
+
+.light-theme{
+    background: rgb(226,228,233);
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.dark-dot{
+    border: 1px solid #fff;
+    background-color: transparent;
+}
+
+.light-dot{
+    border: 1px solid #333;
+    background-color: transparent;
+}
+
+.dark-active{
+    background-color: #fff;
+}
+
+.light-active{
+    background-color: #333;
 }
 
 @media(max-width: 768px){

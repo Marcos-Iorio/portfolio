@@ -18,7 +18,15 @@
 .List_item{
 	position: relative;
     list-style: none;
-    color: $primary-color;
+	transition: color 0.3s ease;
+}
+
+.dark-theme{
+	color: $light-color;
+}
+
+.light-theme{
+	color: #333;
 }
 
 .List_tooltip{

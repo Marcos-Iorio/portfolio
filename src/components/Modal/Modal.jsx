@@ -2,8 +2,8 @@ import React from 'react'
 
 import styles from './Modal.module.scss';
 
-import cvES from './CV-Marcos Iorio.pdf'
-import cvEN from './CV_Marcos-Iorio-en.pdf'
+import cvES from './Marcos-iorio-CV.pdf'
+import cvEN from './Marcos-iorio-CV-en.pdf'
 
 
 const Backdrop = (props) => {

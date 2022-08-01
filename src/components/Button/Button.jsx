@@ -1,11 +1,14 @@
-import React from 'react'
+import React, {Memo} from 'react'
+import { useThemeContext } from '../../hooks/useThemeContext';
 
 import styles from './Button.module.scss';
 
 const Button = props => {
 
+    const {isDark} = useThemeContext();
+    
     return(
-        <button className={styles.button} type={props.type || 'button'} onClick={props.onClick}>
+        <button className={`${styles.button} ${isDark ? styles['dark-button'] : styles['light-button']}`} type={props.type || 'button'} onClick={props.onClick}>
             {props.buttonText}
         </button>
     );

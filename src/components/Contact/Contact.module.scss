@@ -7,8 +7,7 @@
     width: 100%;
     padding: 8em 6em 0 6em;
     box-sizing: border-box;
-    background: rgb(226,228,233);
-    background: linear-gradient(180deg, rgba(226,228,233,1) 0%, rgba(206, 255, 247, 0.596) 100%);
+    transition: all 0.3s ease;
 }
 
 .title{
@@ -31,7 +30,6 @@ footer{
     position: relative;
     
     p{
-        color: #666;
         font-family: $body-font;
     }
 
@@ -48,6 +46,26 @@ footer{
     right: 50%;
     top: 12%;
     width: 5%;
+}
+
+.dark-text p{
+    color: $light-color;
+}
+
+.light-text p{
+    color: $dark-color;
+}
+
+.dark-theme{
+    background: $dark-color;
+    background: linear-gradient(180deg, rgba(51,51,51,1) 0%, rgb(33, 21, 143) 100%);
+    color: $light-color;
+}
+
+.light-theme{
+    background: rgb(226,228,233);
+    background: linear-gradient(180deg, rgba(226,228,233,1) 0%, rgba(206, 255, 247, 0.596) 100%);
+    color: $dark-color;
 }
 
 //Mobile

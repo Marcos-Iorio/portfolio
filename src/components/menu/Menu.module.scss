@@ -13,7 +13,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(10px);
 
     .logo{
         display: flex;
@@ -38,7 +38,6 @@
         font-family: $heading-font;
         font-size: 1.1rem;
         font-weight: 500;
-        color: white;
         transition: color 0.3s ease;
 
 
@@ -53,6 +52,25 @@
             z-index: 1;
         }
     }
+}
+
+.switcher{
+    border-radius: 10px;
+    background: rgba(161, 161, 161, 0.171);
+    outline: none;
+    border: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+
+    svg{
+        font-size: 2em;
+        padding: 5px;
+    }
+}
+
+.switcher:hover{
+    border-radius: 10px;
+    background: rgba(182, 182, 182, 0.253);
 }
 
 //mobile

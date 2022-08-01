@@ -5,6 +5,7 @@ import { Html, useProgress } from '@react-three/drei'
 import randomColors from 'randomcolor'
 
 import Model from './Model'
+import { useThemeContext } from '../../hooks/useThemeContext';
 
    function Loader() {
    const { progress } = useProgress()
@@ -16,6 +17,8 @@ import Model from './Model'
       const [coordX, setCoordX] = useState(0);
       const [coordY, setCoordY] = useState(0); 
       const [color, setColor] = useState();
+
+      const {isDark} = useThemeContext();
 
       const canvasRef = useRef();
 
@@ -57,7 +60,7 @@ import Model from './Model'
                width: '350px',
                height: '350px',
                padding: '0',
-               boxShadow: '0px 10px 15px -3px rgba(0,0,0,0.1)',
+               boxShadow: `0px 10px 15px -3px ${isDark ?'rgba(255,255,255, 0.1)' : 'rgba(0,0,0,0.1)'}`,
             }}
             ref={canvasRef}
          >

@@ -1,22 +1,32 @@
-import React, {useState} from 'react'
-import { useEffect } from 'react';
-import { useMediaQuery } from 'react-responsive'
+import React, {useState, useEffect} from 'react'
 
+import { useMediaQuery } from 'react-responsive'
 import styles from './Menu.module.scss';
 import * as Icon from "react-icons/hi"; 
 import { VscChromeClose } from "react-icons/vsc";
+import {useThemeContext} from '../../hooks/useThemeContext'
 
 const Menu = () => {
     const [isOpen, setIsOpen] = useState(false)
     const isMobile = useMediaQuery({ maxWidth: 768 })
 
-    const [menuColor, setMenuColor] = useState({color: 'white'});
+    const {changeColor, isDark} = useThemeContext()
+
+    const [menuColor, setMenuColor] = useState({color: isDark ? 'black' : 'white'});
 
     const listenScrollEvent = e => {
-        if (window.scrollY > 670) {
-            setMenuColor({color: 'black'})
-        } else {
-            setMenuColor({color: 'white'})
+        if (window.scrollY > 900) {
+            if(isDark){
+                setMenuColor({color: 'white'})
+            }else{
+                setMenuColor({color: 'black'})
+            }
+        }else{
+            if(isDark){
+                setMenuColor({color: 'black'})
+            }else{
+                setMenuColor({color: 'white'})
+            }
         }
       }
     
@@ -29,20 +39,32 @@ const Menu = () => {
       const openMenuHandler = () => {
         setIsOpen(!isOpen)
       }
+
+      const changeMenuColorHandler = () => {
+        if(isDark){
+            setMenuColor({color: 'white'})
+        }else{
+            setMenuColor({color: 'black'})
+        }
+        changeColor();
+      }
     
     if(isMobile){
         return(
             <>
             <header className={styles.mobile__wrapper} style={{color: menuColor.color}}>
                 <p className={styles.logo} style={{color: menuColor.color}}>Marcos.</p>
-                <button className={styles.mobileMenu} style={{color: menuColor.color}} onClick={openMenuHandler}>
-                <Icon.HiOutlineMenuAlt2 style={{color: menuColor.color}}/>
-                </button>
+                <div>
+                    <button onClick={changeMenuColorHandler} className={styles.switcher} style={{color: menuColor.color}}>{isDark ? <Icon.HiOutlineMoon/> : <Icon.HiOutlineSun/>}</button>
+                    <button className={styles.mobileMenu} style={{color: menuColor.color}} onClick={openMenuHandler}>
+                    <Icon.HiOutlineMenuAlt2 style={{color: menuColor.color}}/>
+                    </button>
+                </div>
             </header>
             
             <header className={`${styles.menu__wrapper} ${isOpen ? styles.isOpen : ''}`} style={{color: menuColor.color}}>
                 <button className={styles.mobileMenu} style={{color: menuColor.color}} onClick={openMenuHandler}>
-                <VscChromeClose style={{color: menuColor.color}}/>
+                    <VscChromeClose style={{color: menuColor.color}}/>
                 </button>
                 <ul className={styles.menu} style={{color: menuColor.color}}>
                     <a href="#about" onClick={() => setIsOpen(false)}><li>ABOUT</li></a>
@@ -59,6 +81,7 @@ const Menu = () => {
         <header className={styles.menu__wrapper} style={{color: menuColor.color}}>
             <p className={styles.logo}>Marcos.</p>
             <ul className={styles.menu} style={{color: menuColor.color}}>
+                <button onClick={changeMenuColorHandler} className={styles.switcher} style={{color: menuColor.color}}>{isDark ? <Icon.HiOutlineMoon/> : <Icon.HiOutlineSun/>}</button>
                 <a href="#about"><li>ABOUT</li></a>
                 <a href="#stack"><li>STACK</li></a>
                 <a href="#projects"><li>PROJECTS</li></a>

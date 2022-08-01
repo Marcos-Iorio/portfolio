@@ -5,6 +5,7 @@ import {useSwipeable} from 'react-swipeable';
 import styles from './Slider.module.scss'
 
 import * as Icon from "react-icons/md";
+import { useThemeContext } from '../../hooks/useThemeContext';
 
 export const SliderItem = ({children, width}) => {
     return(
@@ -18,6 +19,8 @@ const Slider = ({children}) => {
     const [activeIndex, setActiveIndex] = useState(0)
     const isMobile = useMediaQuery({ maxWidth: 768 })
     const [paused, setIsPaused] = useState(false);
+
+    const {isDark} = useThemeContext()
 
     const updateIndex = (newIndex) => {
         if(newIndex < 0){
@@ -48,7 +51,7 @@ const Slider = ({children}) => {
 
     if(isMobile){
         return(
-            <div {...handlers} className={styles.carousel} onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
+            <div {...handlers} className={`${styles.carousel} ${isDark ? styles['dark-theme'] : styles['light-theme']}`} onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
             <div className={styles.inner} style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
                 {Children.map(children, (child, index) => {
                     return React.cloneElement(child, {width: "100%"});
@@ -63,10 +66,10 @@ const Slider = ({children}) => {
                     <Icon.MdArrowForwardIos/>
                 </button>
             </div>
-            <div className={styles.dots}>
+            <div className={`${styles.dots}`}>
                     {React.Children.map(children, (child, index) => {
                         return(
-                            <button className={`${styles.dot} ${index === activeIndex ? styles.active: ''}`} onClick={() => updateIndex(index)}></button>
+                            <button className={`${styles.dot} ${isDark ? styles['dark-dot']: styles['light-dot']} ${index !== activeIndex ? '' : isDark ? styles['dark-active'] : styles['light-active']} `} onClick={() => updateIndex(index)}></button>
                         );
                     })}
             </div>
@@ -74,7 +77,7 @@ const Slider = ({children}) => {
         );
     }else{
         return(
-            <div className={styles.carousel}>
+            <div className={`${styles.carousel} ${isDark ? styles['dark-theme'] : styles['light-theme']}`}>
                 <div className={styles.inner} style={{ transform: `translateX(-${activeIndex * 33.33}%)` }}>
                     {Children.map(children, (child, index) => {
                         return React.cloneElement(child, {width: "33.33%"});
@@ -92,7 +95,7 @@ const Slider = ({children}) => {
                 <div className={styles.dots}>
                         {React.Children.map(children, (child, index) => {
                             return(
-                                <button className={`${styles.dot} ${index === activeIndex ? styles.active: ''}`} onClick={() => updateIndex(index)}></button>
+                                <button className={`${styles.dot} ${isDark ? styles['dark-dot']: styles['light-dot']} ${index !== activeIndex ? '' : isDark ? styles['dark-active'] : styles['light-active']} `} onClick={() => updateIndex(index)}></button>
                             );
                         })}
                 </div>

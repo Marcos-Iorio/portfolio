@@ -4,6 +4,7 @@ import party from "party-js";
 import emailjs from '@emailjs/browser';
 
 import styles from './Form.module.scss'
+import { useThemeContext } from '../../hooks/useThemeContext';
 
 const mailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
@@ -55,6 +56,8 @@ const Form = (props) => {
     const {isValid: emailIsValid} = emailState;
     const {isValid: nameIsValid} = nameState;
     const {isValid: messageIsValid} = messageState;
+
+    const {isDark} = useThemeContext()
 
     const submitHandler = (e) => {
       e.preventDefault();
@@ -147,7 +150,7 @@ const Form = (props) => {
             <label htmlFor="name">Name*</label>
                 <input type="text"
                        name="user_name" 
-                       className={`${styles.contact_input} ${nameState.isValid === false ? styles.invalid : ''}`}
+                       className={`${styles.contact_input} ${isDark ? styles['dark-border'] : styles['light-border']} ${nameState.isValid === false ? styles.invalid : ''}`}
                        placeholder="Your name :)"  
                        required
                        value={nameState.value}
@@ -155,7 +158,7 @@ const Form = (props) => {
                        onBlur={validateNameHandler}/>
             <label htmlFor="mail">Mail*</label>
                 <input type="mail"
-                       className={`${styles.contact_input} ${
+                       className={`${styles.contact_input} ${isDark ? styles['dark-border'] : styles['light-border']} ${
                          emailState.isValid === false ? styles.invalid : ''
                        }`}
                        name="user_mail"
@@ -166,7 +169,7 @@ const Form = (props) => {
                        onBlur={validateEmailHandler}/>
             <label htmlFor="message">Message*</label>
               <textarea name="message"
-                        className={`${styles.contact__textarea} ${messageState.isValid === false ? styles.invalid : ''}`}
+                        className={`${styles.contact__textarea} ${isDark ? styles['dark-border'] : styles['light-border']} ${messageState.isValid === false ? styles.invalid : ''}`}
                         cols="30"
                         rows="7"
                         placeholder="You first..." 
@@ -178,14 +181,14 @@ const Form = (props) => {
               </textarea>
             <button
                 type="submit"
-                className={styles.submit__button}
+                className={`${styles.submit__button} ${isDark ? styles['dark-button'] : styles['light-button']}`}
                 disabled={!formIsValid}
                 ref={sendButton}>
                 {!isLoading ? 'Send' : 'Sending...'}
             </button>
             <div id="confettiParticle"></div>
             <div>{errorMessage}</div>
-            <div className={styles.or_linkedin}>
+            <div className={`${styles.or_linkedin} ${isDark ? styles['dark-text'] : styles['light-text']}`}>
                 <p>Or</p>
                 <p>marcossiorio@gmail.com</p>
             </div>

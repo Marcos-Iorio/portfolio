@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useCallback} from 'react'
 import Scene from '../scene/Scene';
 
 import styles from './About.module.scss'
@@ -6,20 +6,24 @@ import styles from './About.module.scss'
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import Button from '../Button/Button';
 import Modal from '../Modal/Modal';
+import { useThemeContext } from '../../hooks/useThemeContext';
+
 
 const About = () => {
     const [modal, setModal] = useState(false);
 
-    const openModalHandler = () => {
-        setModal(!modal)
-    }
+    const {isDark} = useThemeContext();
 
+    const openModalHandler = () => {
+        setModal(prev => !prev)
+    }
+    
     const closeModalHandler = () => {
         setModal(false)
     }
 
     return(
-        <section className={styles.about__wrapper} id="about">
+        <section className={`${styles.about__wrapper} ${isDark ? styles['light-theme'] : styles['dark-theme']}`} id="about">
             <div className={styles.about__content}>
                 <div className={styles.about__info}>
                     <h3 className={styles.about__title}>About me.</h3>
@@ -32,7 +36,7 @@ const About = () => {
                     I would love to learn Three js and Blender to make amazing things in the web.<br/>
                     </p>
                     <div className={styles.download_cv}>
-                        <Button onClick={openModalHandler} type='cv' buttonText='Download CV' />
+                        <Button onClick={openModalHandler} type='cv' buttonText='Download CV'/>
                         <img className={styles.button__detail} src="./Button.svg" alt="Button detail" />
                     </div>
                 </div>

@@ -4,11 +4,14 @@ import styles from './Stack.module.scss';
 import List from '../List/List';
 import { stack } from '/src/data.js'
 import { v4 as uuidv4 } from 'uuid';
+import { useThemeContext } from '../../hooks/useThemeContext';
 
 
 const Stack = () => {
+    const {isDark} = useThemeContext();
+
     return(
-        <section className={styles.stack__wrapper} id="stack">
+        <section className={`${styles.stack__wrapper} ${isDark ? styles['dark-theme'] : styles['light-theme']}`} id="stack">
             <div className={styles.stack__content}>
                 <h2 className={styles.stack__title}>Stack.</h2>
                 <div className={styles.front__wrapper}>

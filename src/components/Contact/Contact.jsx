@@ -1,11 +1,14 @@
 import React, {useRef, useState} from 'react'
 
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { useThemeContext } from '../../hooks/useThemeContext';
 
 import styles from './Contact.module.scss';
 import Form from './Form';
 
 const Contact = () =>{
+
+    const {isDark} = useThemeContext()
 
     return(
         <section>
@@ -16,7 +19,7 @@ const Contact = () =>{
                     <meta name="description" content="Contact me sending a e-mail o throught Linkedin" />
                 </Helmet>
             </HelmetProvider>
-            <div className={styles.contact__wrapper} id="contact-me">
+            <div className={`${styles.contact__wrapper} ${isDark ? styles['dark-theme'] : styles['light-theme']}`} id="contact-me">
                 <div className={styles.title}>
                     <span>Reach me!</span>
                 </div>
@@ -25,7 +28,7 @@ const Contact = () =>{
                 </p>
                 <img className={styles.font__detail} src="./nunito.svg" alt="Font family type" />
                 <Form/>
-                <footer>
+                <footer className={`${isDark ? styles['dark-text'] : styles['light-text']}`}>
                     <p>Designed and coded with love by Marcos Iorio.</p>
                     <img className={styles.love__detail} src="./love.svg" alt="With love detail" />
                 </footer>

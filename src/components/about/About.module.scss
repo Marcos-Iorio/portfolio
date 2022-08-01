@@ -8,8 +8,8 @@
     height: 100vh;
     width: 100%;
     z-index: 1;
-    scroll-snap-align: center;
     padding: 15em 6em 0 6em;
+    transition: all 0.3s ease;
 
     .about__content{
         display: grid;
@@ -86,6 +86,24 @@
         right: -5%;
         width: 30%;
     }
+}
+
+.dark-text{
+    color: $dark-color;
+}
+
+.light-text{
+    color: $light-color;
+}
+
+.dark-theme{
+    background: $light-color;
+    color: $dark-color;
+}
+
+.light-theme{
+    background: $dark-color;
+    color: $light-color;
 }
 
 @media(max-width: 1366px){
