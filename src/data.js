@@ -13,6 +13,7 @@ const stack = [
       { icon: icon.SiReact, name: "React" },
       { icon: icon.SiWordpress, name: "Wordpress" },
       { icon: icon.SiRedux, name: "Redux Toolkit" },
+      { icon: icon.SiNextdotjs, name: "NextJS" },
     ],
   },
   {
@@ -79,6 +80,12 @@ const projects = [
     description: "A webapp to take notes that saves its on Local Storage.",
     github: "https://github.com/Marcos-Iorio/notes-app",
     livePage: "https://notes-app-marcos-iorio.vercel.app/",
+  },
+  {
+    name: "Mercado Libre's Clone",
+    description: "Made it with NextJS, Typescript, React-Redux, Tailwind.",
+    github: "https://github.com/Marcos-Iorio/mercado-libre-clone",
+    livePage: "https://mercado-libre-clone-marcos-iorio.vercel.app/",
   },
 ];
 
