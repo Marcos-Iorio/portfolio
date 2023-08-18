@@ -87,6 +87,12 @@ const projects = [
     github: "https://github.com/Marcos-Iorio/mercado-libre-clone",
     livePage: "https://mercado-libre-clone-marcos-iorio.vercel.app/",
   },
+  {
+    name: "Peronio's website",
+    description: "Crypto website, Next, Wagmi, Subgraph, Styled Components",
+    github: "https://github.com/peronio-ar/front",
+    livePage: "https://front-kohl.vercel.app/",
+  },
 ];
 
 export { stack, projects };
