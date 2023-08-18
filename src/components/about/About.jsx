@@ -34,19 +34,21 @@ const About = () => {
           <p className={styles.about__description}>
             I’m from <b>Buenos Aires, Argentina.</b>
             <br />
-            I’m working with Wordpress since 2021.
+            I’m currently working in Motorola as a Frontend developer using
+            React, Typescript, Sass and Vtex as a CMS.
             <br />
-            My goal is to learn new technologies and become a FullStack
-            developer.
+            My goal is to learn from others, and become a better developer each
+            day.
             <br />
-            I code in JavaScript, React, Sass, Tailwind.
+            My stack is mainly focused in frontend developer but I have
+            knowledge in Node too.
             <br />
-            I also have knowledge of Node with Express in the backend.
+            I'm currently learning Go.
             <br />
-            I would love to learn Three js and Blender to make amazing things in
-            the web.
+            I like to play football, take a coffee and pass time with my family
+            and friends.
             <br />
-            I'm currently practicing Nextjs :)
+            In 2024 I will start studying computer systems :)
             <br />
           </p>
           <div className={styles.download_cv}>
