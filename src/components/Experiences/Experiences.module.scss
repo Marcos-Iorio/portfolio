@@ -64,3 +64,28 @@
     }
   }
 }
+
+@media only screen and(max-width: 767px) {
+  .experiences_section {
+    padding: 50px 0 !important;
+
+    height: 100% !important;
+  }
+  .content {
+    padding: 0 !important;
+
+    .title {
+      margin: 0 !important;
+      padding-bottom: 25px;
+    }
+  }
+  .works {
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100% !important;
+    width: 92% !important;
+    margin: auto;
+    margin-bottom: 50px;
+    padding: 0 !important;
+  }
+}

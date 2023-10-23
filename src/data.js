@@ -55,7 +55,7 @@ const works = [
     logo: "logo-motorola.jpg",
     period: "Jun 2023 - Currently",
     description:
-      "I develop and support Motorola websites in Latam, with continously calls with Marketing and selling teams. Making custom components, testing with global motorola team and fullfillment company to develop new features for the websites.",
+      "I develop and support Motorola websites in Latam, with continously calls with Marketing and selling teams. Making custom components, testing with global motorola team and fullfillment company to develop new features for the websites. I also have weekly calls with all the devs from Latam to discuss our problems and give a hand if someone needs it. We use monday to track the tickets and time.",
     stack: "React, Typescript, Sass, Vtex.",
 
     isCurrent: true,

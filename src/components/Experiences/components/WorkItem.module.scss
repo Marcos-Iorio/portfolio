@@ -86,3 +86,23 @@
     }
   }
 }
+
+@media only screen and (max-width: 767px) {
+  .item {
+    padding: 15px;
+    max-width: 100%;
+    width: 100%;
+    height: fit-content;
+    gap: 10px;
+
+    img {
+      width: 70px;
+      height: 70px;
+    }
+
+    .content {
+      padding: 10px;
+      gap: 10px;
+    }
+  }
+}
