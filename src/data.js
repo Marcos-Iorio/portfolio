@@ -27,6 +27,41 @@ const stack = [
   },
 ];
 
+const works = [
+  {
+    position: "Jr. Frontend developer",
+    companyName: "Lund Marketing",
+    logo: "lund-logo.png",
+    period: "Mar 2021 - Nov 2022",
+    description:
+      "Develop and mantain Vtex and wordpress websites in Argentina, Ireland and Spain. I talked daily with brands team and design team to develop the requirements of the clients.",
+    stack: "Vtex, Wordpress, css",
+    isCurrent: false,
+  },
+  {
+    position: "Freelance Jr. Frontend developer",
+    companyName: "La Crypta",
+    logo: "crypta-logo.jpg",
+    period: "Jan 2023 - Mar 2023",
+    description:
+      "I made the peronio's website entire from design to developing it, Peronio is an Argentinian crypto. This was a very tough challenge because I never make contact with web3 and smart-contract before. I have no team so all my problems have to be resolved by me. I learned a lot of new things and I improve my coding skills.",
+    stack: "Nextjs, Wagmi, Sass, Typescript",
+
+    isCurrent: false,
+  },
+  {
+    position: "Software developer",
+    companyName: "Motorola",
+    logo: "logo-motorola.jpg",
+    period: "Jun 2023 - Currently",
+    description:
+      "I develop and support Motorola websites in Latam, with continously calls with Marketing and selling teams. Making custom components, testing with global motorola team and fullfillment company to develop new features for the websites.",
+    stack: "React, Typescript, Sass, Vtex.",
+
+    isCurrent: true,
+  },
+];
+
 const projects = [
   {
     name: "Chat-App",
@@ -95,4 +130,4 @@ const projects = [
   },
 ];
 
-export { stack, projects };
+export { stack, projects, works };

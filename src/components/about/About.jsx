@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import Scene from "../scene/Scene";
 
 import styles from "./About.module.scss";
@@ -40,8 +40,8 @@ const About = () => {
             My goal is to learn from others, and become a better developer each
             day.
             <br />
-            My stack is mainly focused in frontend developer but I have
-            knowledge in Node too.
+            My stack is mainly focused in frontend but I have knowledge in Node
+            too.
             <br />
             I'm currently learning Go.
             <br />

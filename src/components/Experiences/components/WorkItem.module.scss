@@ -1,0 +1,88 @@
+@import "../../../vars.scss";
+
+.dark-theme {
+  background: $light-color;
+  color: $dark-color;
+}
+
+.light-theme {
+  background: $dark-color;
+  color: $light-color;
+}
+
+.dark-text {
+  color: $dark-color;
+}
+
+.light-text {
+  color: $light-color;
+}
+
+.dark_bg {
+  background: #222;
+}
+
+.light_bg {
+  background: #ebeef5;
+}
+
+.item {
+  border-radius: 15px;
+  padding: 15px;
+  max-width: 100%;
+  width: 600px;
+  height: 300px;
+  display: flex;
+  gap: 25px;
+  flex-direction: row;
+
+  img {
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+  }
+
+  .content {
+    padding: 10px;
+    font-family: $body-font;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .active {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 15px;
+
+      .actual_job {
+        width: 7px;
+        height: 7px;
+        background-color: rgb(12, 131, 12);
+        border-radius: 100%;
+      }
+    }
+
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h3 {
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .period {
+      font-size: 14px;
+    }
+
+    .position {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .description {
+      width: 100%;
+    }
+  }
+}
