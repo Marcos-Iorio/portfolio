@@ -96,6 +96,9 @@ const Menu = () => {
             <a href="#about" onClick={() => setIsOpen(false)}>
               <li>ABOUT</li>
             </a>
+            <a href="#experiences" onClick={() => setIsOpen(false)}>
+              <li>EXPERIENCES</li>
+            </a>
             <a href="#stack" onClick={() => setIsOpen(false)}>
               <li>STACK</li>
             </a>
@@ -130,23 +133,30 @@ const Menu = () => {
           <li>ABOUT</li>
         </a>
         <a
-          href="#stack"
+          href="#experiences"
           onClick={() => setActive(2)}
           className={`${active === 2 ? styles.active : ""}`}
+        >
+          <li>JOBS</li>
+        </a>
+        <a
+          href="#stack"
+          onClick={() => setActive(3)}
+          className={`${active === 3 ? styles.active : ""}`}
         >
           <li>STACK</li>
         </a>
         <a
           href="#projects"
-          onClick={() => setActive(3)}
-          className={`${active === 3 ? styles.active : ""}`}
+          onClick={() => setActive(4)}
+          className={`${active === 4 ? styles.active : ""}`}
         >
           <li>PROJECTS</li>
         </a>
         <a
           href="#contact-me"
-          onClick={() => setActive(4)}
-          className={`${active === 4 ? styles.active : ""}`}
+          onClick={() => setActive(5)}
+          className={`${active === 5 ? styles.active : ""}`}
         >
           <li>CONTACT</li>
         </a>
