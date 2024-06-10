@@ -19,11 +19,17 @@
 }
 
 .dark_bg {
-  background: #222;
+  border: 1px solid #444;
+  color: $light-color;
+  background: #313131;
 }
 
 .light_bg {
-  background: #ebeef5;
+  /* background: #ebeef5; */
+  border: 1px solid #dbdbdb;
+  color: $dark-color;
+  z-index: 1;
+  background: #e4e4e4;
 }
 
 .item {

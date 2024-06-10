@@ -85,18 +85,18 @@
     }
 
     .background_shadow {
-      width: 70rem;
-      height: 60rem;
+      width: 150rem;
+      height: 150rem;
       background-color: #333;
       background: radial-gradient(
         circle,
-        rgba(170, 12, 218, 0.336) 15%,
+        rgb(77, 166, 178) 15%,
         rgba(0, 213, 255, 0) 60%
       );
       position: absolute;
       left: 50%;
-      top: -110%;
-      transform: translate(-50%, 0);
+      top: 0;
+      transform: translate(-50%, -80%);
       z-index: -1;
       opacity: 0.3;
     }

@@ -87,13 +87,14 @@
 }
 
 .dark-theme {
-  background: #333;
-  box-shadow: 0px 10px 15px -3px rgba(255, 255, 255, 0.1);
+  background: #313131;
+  border: 1px solid #444;
 }
 
 .light-theme {
-  background: rgb(226, 228, 233);
-  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  background: #e4e4e4;
+  /* box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1); */
+  border: 1px solid #dbdbdb;
 }
 
 .dark-dot {
