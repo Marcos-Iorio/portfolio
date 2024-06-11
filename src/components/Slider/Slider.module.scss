@@ -115,6 +115,9 @@
   background-color: #333;
 }
 
+@media only screen and (min-width: 1100px) and (max-width: 1366px) {
+}
+
 @media (max-width: 768px) {
   .carousel {
     height: 65vh !important;

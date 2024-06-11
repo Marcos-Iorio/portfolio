@@ -170,7 +170,7 @@
   }
 }
 
-@media only screen and (min-width: 320px) and (max-width: 640px) {
+@media only screen and (min-width: 320px) and (max-width: 768px) {
   .hover__detail {
     left: 47% !important;
     width: 12em !important;
@@ -189,8 +189,6 @@
     padding: 0;
     margin: 0;
     width: fit-content !important;
-    display: grid !important;
-    grid-template-columns: 1fr auto;
     justify-items: end;
 
     p {
@@ -205,7 +203,7 @@
     font-family: $body-font;
     text-align: center;
     font-weight: 300;
-    font-size: 1rem;
+    font-size: 1.5rem;
     padding: 0;
     margin: 0;
   }
